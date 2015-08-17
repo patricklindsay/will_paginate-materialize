@@ -1,7 +1,8 @@
 require "will_paginate/materialize/version"
+require "will_paginate/materialize/materialize_link_renderer"
 
 module WillPaginate
   module Materialize
-    # Your code goes here...
+    ActionView::Base.send :include, MaterializeHelper
   end
 end
