@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Patrick Lindsay"]
   spec.email         = ["patrick.lindsay@sage.com"]
 
-  spec.summary       = %q{This gem integrates the MaterializeCSS pagination component with the will_paginate pagination gem.}
+  spec.summary       = %q{MaterializeCSS pagination renderer for the will_paginate pagination gem.}
+  spec.description   = %q{This gem integrates the MaterializeCSS pagination component with the will_paginate pagination gem.}
   spec.homepage      = "https://github.com/patricklindsay/will_paginate-materialize"
   spec.license       = "MIT"
 

@@ -32,9 +32,9 @@ Or install it yourself as:
 Bug reports and pull requests are welcome on GitHub at https://github.com/patricklindsay/will_paginate-materialize. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ### Further works
-Extend gem so the MaterializePagination renderer is the default renderer
-Extend gem so that users do not need to add will-paginate in their Gemfile
-Add specs
+ * Extend gem so the MaterializePagination renderer is the default renderer
+ * Extend gem so that users do not need to add will-paginate in their Gemfile
+ * Add specs
 
 ## License
 
