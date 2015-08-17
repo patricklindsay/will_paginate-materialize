@@ -1,8 +1,5 @@
-require "will_paginate/materialize/version"
-require "will_paginate/materialize/materialize_link_renderer"
+require 'will_paginate'
 
-module WillPaginate
-  module Materialize
-    ActionView::Base.send :include, MaterializeHelper
-  end
+if defined?(ActionView)
+    require "materialize_pagination/action_view"
 end

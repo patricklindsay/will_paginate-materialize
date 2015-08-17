@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'will_paginate/materialize/version'
+require 'materialize_pagination/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "will_paginate-materialize"
-  spec.version       = WillPaginate::Materialize::VERSION
+  spec.version       = MaterializePagination::VERSION
   spec.authors       = ["Patrick Lindsay"]
   spec.email         = ["patrick.lindsay@sage.com"]
 
@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 
-  spec.add_runtime_dependency "will_paginate", '~> 3.0.6'
+  spec.add_runtime_dependency "will_paginate", ">= 3.0.3"
 end
