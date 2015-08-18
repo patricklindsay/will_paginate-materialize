@@ -26,7 +26,12 @@ Or install it yourself as:
 ```ruby
 <%= will_paginate @collection, renderer: MaterializePagination::Rails %>
 ```
-
+4. Add the following to your application.scss file
+```
+.pagination a li.active {
+    color: #fff;
+}
+```
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/patricklindsay/will_paginate-materialize. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
