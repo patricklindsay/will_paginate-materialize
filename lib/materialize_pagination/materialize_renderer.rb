@@ -9,12 +9,12 @@ module MaterializePagination
       tag :div, tag(:ul, html, :class => "pagination"), class: 'row'
     end
 
-    # TODO: May want to make the whole list item clickable
     # @return [String] rendered pagination link
     def page_number(page)
       classes = ['waves-effect', ('active' if page == current_page)].join(' ')
 
-      tag :li, link(page, page, :rel => rel_value(page)), :class => classes
+      list_item = tag :li, page, :class => classes
+      link(list_item, page, :rel => rel_value(page))
     end
 
     # @return [String] rendered gap between pagination links
