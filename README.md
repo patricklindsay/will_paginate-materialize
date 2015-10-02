@@ -21,12 +21,11 @@ Or install it yourself as:
 ## Usage
 
 1. Install [Materialize-sass](https://github.com/mkhairi/materialize-sass)
-2. Install [will_paginate](https://github.com/mislav/will_paginate)
-3. In your view, use the renderer: MaterializePagination::Rails option with the will_paginate helper.
+2. In your view, use the renderer: MaterializePagination::Rails option with the will_paginate helper.
 ```ruby
 <%= will_paginate @collection, renderer: MaterializePagination::Rails %>
 ```
-4. Add the following to your application.scss file
+3. Add the following to your application.scss file
 ```
 .pagination a li.active {
     color: #fff;
@@ -38,7 +37,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/patric
 
 ### Further works
  * Extend gem so the MaterializePagination renderer is the default renderer
- * Extend gem so that users do not need to add will-paginate in their Gemfile
  * Add specs
 
 ## License
