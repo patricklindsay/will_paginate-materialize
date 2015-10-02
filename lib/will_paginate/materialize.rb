@@ -1,5 +1,4 @@
 require 'will_paginate'
 
-if defined?(ActionView)
-    require "materialize_pagination/action_view"
-end
+require "materialize_pagination/action_view" if defined?(ActionView)
+require 'materialize_pagination/railtie' if defined?(Rails)
