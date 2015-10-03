@@ -27,7 +27,12 @@ Or install it yourself as:
       color: #fff;
   }
 ```
-3. You're done! Use the will_paginate helper as you would otherwise.
+3. Add the following into your HEAD. This loads the [Google Material design Icon fonts](https://google.github.io/material-design-icons/#what-are-material-icons).
+  ```
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  ```
+
+You're done! Use the will_paginate helper as you would otherwise.
   ```ruby
   <%= will_paginate @collection %>
   ```
