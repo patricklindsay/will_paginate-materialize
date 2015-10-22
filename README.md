@@ -22,20 +22,20 @@ Or install it yourself as:
 
 1. Install [Materialize-sass](https://github.com/mkhairi/materialize-sass) (if you haven't already)
 2. Add the following to your application.scss file
-  ```
-  .pagination a li.active {
-      color: #fff;
-  }
+```
+.pagination a li.active {
+  color: #fff;
+}
 ```
 3. Add the following into your HEAD. This loads the [Google Material design Icon fonts](https://google.github.io/material-design-icons/#what-are-material-icons).
-  ```
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  ```
+```
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
 
 You're done! Use the will_paginate helper as you would otherwise.
-  ```ruby
-  <%= will_paginate @collection %>
-  ```
+```ruby
+<%= will_paginate @collection %>
+```
 
 ## Contributing
 
