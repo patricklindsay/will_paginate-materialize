@@ -1,4 +1,6 @@
 # CHANGELOG
+## Version 0.2.0
+* Updated will_paginate dependency to 3.1.0 for compatibility with rails 5.
 
 ## Version 0.1.2
 * Set Materialize to the default LinkRenderer
