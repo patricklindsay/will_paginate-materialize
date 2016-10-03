@@ -30,7 +30,7 @@ module MaterializePagination
       classes = [(classname if @options[:page_links]), ('disabled' unless page)].join(' ')
       chevron_direction = classname == 'previous_page' ? 'left' : 'right'
 
-      tag :li, link("<i class='fa fa-arrow-#{chevron_direction}' aria-hidden='true'></i>".html_safe, page || '#!'), class: classes
+      tag :li, link("<i class='fa fa-chevron-#{chevron_direction}' aria-hidden='true'></i>".html_safe, page || '#!'), class: classes
     end
   end
 end
