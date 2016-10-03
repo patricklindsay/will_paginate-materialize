@@ -11,7 +11,11 @@ module MaterializePagination
 
     # @return [String] rendered pagination link
     def page_number(page)
-      classes = ['waves-effect', ('active' if page == current_page)].join(' ')
+      if page == current_page
+        classes = 'active'
+      else
+        classes = 'waves-effect'
+      end
 
       tag :li, link(page, page, :rel => rel_value(page)), :class => classes
     end
