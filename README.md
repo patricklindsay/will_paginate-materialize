@@ -23,7 +23,7 @@ Or install it yourself as:
 1. Install [Materialize-sass](https://github.com/mkhairi/materialize-sass) (if you haven't already)
 2. Add the following to your application.scss file
 ```
-.pagination a li.active {
+.pagination li.active a {
   color: #fff;
 }
 ```
