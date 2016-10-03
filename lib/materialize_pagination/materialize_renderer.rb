@@ -11,12 +11,7 @@ module MaterializePagination
 
     # @return [String] rendered pagination link
     def page_number(page)
-      if page == current_page
-        classes = 'active'
-      else
-        classes = 'waves-effect'
-      end
-
+      classes = page == current_page ? 'active' : 'waves-effect'
       tag :li, link(page, page, :rel => rel_value(page)), :class => classes
     end
 
@@ -27,8 +22,7 @@ module MaterializePagination
 
     # @return [String] rendered previous and next arrow links
     def previous_or_next_page(page, text, classname)
-      disabled_or_active = page ? 'waves-effect' : 'disabled'
-      classes = [(classname if @options[:page_links]), disabled_or_active].join(' ')
+      classes = [(classname if @options[:page_links]), (page ? 'waves-effect' : 'disabled')].join(' ')
       chevron_direction = classname == 'previous_page' ? 'left' : 'right'
 
       tag :li, link("<i class='fa fa-chevron-#{chevron_direction}' aria-hidden='true'></i>".html_safe, page || '#!'), class: classes
