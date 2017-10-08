@@ -11,10 +11,8 @@ module MaterializePagination
 
     # @return [String] rendered pagination link
     def page_number(page)
-      classes = ['waves-effect', ('active' if page == current_page)].join(' ')
-
-      list_item = tag :li, page, :class => classes
-      link(list_item, page, :rel => rel_value(page))
+      classes = page == current_page ? 'active' : 'waves-effect'
+      tag :li, link(page, page, :rel => rel_value(page)), :class => classes
     end
 
     # @return [String] rendered gap between pagination links
@@ -24,7 +22,7 @@ module MaterializePagination
 
     # @return [String] rendered previous and next arrow links
     def previous_or_next_page(page, text, classname)
-      classes = [(classname if @options[:page_links]), ('disabled' unless page)].join(' ')
+      classes = [(classname if @options[:page_links]), (page ? 'waves-effect' : 'disabled')].join(' ')
       chevron_direction = classname == 'previous_page' ? 'left' : 'right'
 
       tag :li, link("<i class='material-icons'>chevron_#{chevron_direction}</i>".html_safe, page || '#!'), class: classes
