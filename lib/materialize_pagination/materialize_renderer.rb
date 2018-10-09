@@ -25,14 +25,18 @@ module MaterializePagination
       classes = [(classname if @options[:page_links]), (page ? 'waves-effect' : 'disabled')].join(' ')
       direction = classname == 'previous_page' ? :left : :right
 
+      # Evaluate iconset selection and set the proper content for the link
       case WillPaginate::Materialize.configuration.iconset
       when :material_design
-        tag :li, link("<i class='material-icons'>chevron_#{direction}</i>".html_safe, page || '#!'), class: classes
+        link_structure = "<i class='material-icons'>chevron_#{direction}</i>"
       when :font_awesome
-        tag :li, link("<i class='fas fa-chevron-#{direction}'></i>")
+        link_structure = "<i class='fas fa-chevron-#{direction}'></i>"
       else
+        link_structure = ""
         raise 'Iconset not found'
       end
+
+      tag :li, link(link_structure.html_safe, page || '#!'), class: classes
     end
   end
 end
