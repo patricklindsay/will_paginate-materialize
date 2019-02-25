@@ -23,9 +23,20 @@ module MaterializePagination
     # @return [String] rendered previous and next arrow links
     def previous_or_next_page(page, text, classname)
       classes = [(classname if @options[:page_links]), (page ? 'waves-effect' : 'disabled')].join(' ')
-      chevron_direction = classname == 'previous_page' ? 'left' : 'right'
+      direction = classname == 'previous_page' ? :left : :right
 
-      tag :li, link("<i class='material-icons'>chevron_#{chevron_direction}</i>".html_safe, page || '#!'), class: classes
+      # Evaluate iconset selection and set the proper content for the link
+      case WillPaginate::Materialize.configuration.iconset
+      when :material_design
+        link_structure = "<i class='material-icons'>chevron_#{direction}</i>"
+      when :font_awesome
+        link_structure = "<i class='fas fa-chevron-#{direction}'></i>"
+      else
+        link_structure = ""
+        raise 'Iconset not found'
+      end
+
+      tag :li, link(link_structure.html_safe, page || '#!'), class: classes
     end
   end
 end
