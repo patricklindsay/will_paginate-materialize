@@ -7,6 +7,7 @@ module WillPaginate::Materialize
   class Configuration
     def initialize
       @iconset = :material_design
+      @direction = :ltr
     end
 
     def valid_iconsets
@@ -15,8 +16,18 @@ module WillPaginate::Materialize
       ]
     end 
 
+    def valid_directions
+      [
+        :rtl, :ltr
+      ]
+    end
+
     def iconset
       @iconset
+    end
+
+    def direction
+      @direction
     end
 
     def iconset=(value)
@@ -24,6 +35,14 @@ module WillPaginate::Materialize
         @iconset = value.to_sym
       else
         raise "Iconset not valid. Valid options are: #{self.valid_iconsets.to_s}"
+      end
+    end
+
+    def direction=(value)
+      if self.valid_directions.include? value.to_sym
+        @direction = value.to_sym
+      else
+        raise "Direction not valid. Valid options are: #{self.valid_directions.to_s}"
       end
     end
   end

@@ -27,7 +27,6 @@ describe WillPaginate::Materialize do
     end
 
     it 'should not allow incorrect iconset value' do
-
       expect {
         WillPaginate::Materialize.configure do |config|
           config.iconset = :fatcow_icons
@@ -35,6 +34,30 @@ describe WillPaginate::Materialize do
       }.to raise_error(Exception, /Iconset not valid/)
 
       expect(WillPaginate::Materialize.configuration.iconset).to eq :material_design
+    end
+
+    it 'should allow correct direction value' do
+      test_directions = [:ltr, :rtl]
+
+      test_directions.each do |direction|
+        expect {
+          WillPaginate::Materialize.configure do |config|
+            config.direction = direction
+          end
+        }.not_to raise_error(Exception, /Direction not valid/)
+
+        expect(WillPaginate::Materialize.configuration.direction).to eq direction
+      end
+    end
+
+    it 'should not allow incorrect direction value' do
+      expect {
+        WillPaginate::Materialize.configure do |config|
+          config.direction = :fatcow_directions
+        end
+      }.to raise_error(Exception, /Direction not valid/)
+
+      expect(WillPaginate::Materialize.configuration.direction).to eq :ltr
     end
   end
 end

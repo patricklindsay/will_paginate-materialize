@@ -24,6 +24,7 @@ module MaterializePagination
     def previous_or_next_page(page, text, classname)
       classes = [(classname if @options[:page_links]), (page ? 'waves-effect' : 'disabled')].join(' ')
       direction = classname == 'previous_page' ? :left : :right
+      direction = direction == :right ? :left : :right if WillPaginate::Materialize.configuration.direction == :rtl
 
       # Evaluate iconset selection and set the proper content for the link
       case WillPaginate::Materialize.configuration.iconset
