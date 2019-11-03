@@ -25,6 +25,9 @@ And then execute:
     config.iconset = :material_design
     # FontAwesome Icons
     config.iconset = :font_awesome
+	# The text direction, can be `ltr` or `rtl`
+	# default: `ltr`
+	config.direction = :rtl
   end
 ```
 
